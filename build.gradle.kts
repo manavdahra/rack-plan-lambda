@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.21"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.9.21"
@@ -33,9 +35,15 @@ application {
     mainClass.set("com.example.ApplicationKt")
 }
 java {
-    sourceCompatibility = JavaVersion.toVersion("17")
+    sourceCompatibility = JavaVersion.toVersion(JavaVersion.VERSION_17)
+    targetCompatibility = JavaVersion.toVersion(JavaVersion.VERSION_17)
 }
 
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+}
 
 graalvmNative.toolchainDetection.set(false)
 micronaut {
