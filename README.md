@@ -26,6 +26,11 @@
 - [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
 
 ## How to run
+
+> Prerequisites: GraalVM 
+ 
+GraalVM Installation reference: https://www.graalvm.org/latest/docs/getting-started/
+
 ```shell
 # Build the application
 ./gradlew nativeCompile
