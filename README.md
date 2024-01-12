@@ -25,4 +25,14 @@
 
 - [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
 
+## How to run
+```shell
+# Build the application
+./gradlew nativeCompile
 
+# Run the application
+./build/native-image/rack-plan-lambda
+
+# Create a rack plan
+curl -v -XPOST http://localhost:8080/rack-planning/rack-plans
+```
