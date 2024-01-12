@@ -36,7 +36,7 @@ GraalVM Installation reference: https://www.graalvm.org/latest/docs/getting-star
 ./gradlew nativeCompile
 
 # Run the application
-./build/native-image/rack-plan-lambda
+./build/native/nativeCompile/rack-plan-lambda
 
 # Create a rack plan
 curl -v -XPOST http://localhost:8080/rack-planning/rack-plans
