@@ -1,5 +1,6 @@
 package com.example.controller
 
+import com.example.domain.problem.knapsack.KnapsackProblemSolver
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
@@ -29,6 +30,7 @@ class RackPlanController {
         val newRackPlanRepresentation =
             RackPlanRepresentation(id.toString(), "Rack Plan: ${rackPlansRepresentation.size}")
         rackPlansRepresentation[id.toString()] = newRackPlanRepresentation
+        KnapsackProblemSolver.solve()
         return HttpResponse.created(newRackPlanRepresentation)
     }
 }
